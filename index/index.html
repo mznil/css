@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* @import url("https://fonts.googleapis.com/css?family=Lato:200"); */
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background: url(https://i.loli.net/2019/11/17/GAYyzeKsiWjP5qO.jpg);
+          background-size: cover;
+          background-position: center;
+        }
+    
+        .frosted-glass {
+          position: fixed;
+          top: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 72vw;
+          height: 36vh;
+          box-shadow: 0 0.3px 0.7px rgba(0, 0, 0, 0.126), 0 0.9px 1.7px rgba(0, 0, 0, 0.179), 0 1.8px 3.5px rgba(0, 0, 0, 0.224), 0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(20px);
+          transition: 0.5s ease;
+        }
+        .frosted-glass:hover {
+          box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.157), 0 1.7px 2.6px rgba(0, 0, 0, 0.224), 0 3.5px 5.3px rgba(0, 0, 0, 0.28), 0 7.3px 11px rgba(0, 0, 0, 0.346), 0 20px 30px rgba(0, 0, 0, 0.5);
+        }
+        .frosted-glass .title {
+          padding-left: 0.375em;
+          font-size: 2.5em;
+          font-family: Lato, sans-serif;
+          font-weight: 200;
+          letter-spacing: 0.75em;
+          color: rgb(7, 197, 255);
+        }
+        @media (max-width: 640px) {
+          .frosted-glass .title {
+            font-size: 2em;
+          }
+        }
+        /*class = header的元素居中 */
+        .header{
+            text-align: center;
+        }
+        /* 给所有a标签添加一个按钮样式,并且大小一致,半透明 */
+        a{
+            width: 8em;
+            height: 2em;
+            display: inline-block;
+            padding: 0.75em 1.5em;
+            margin: 0.5em 0.5em;
+            border: 1px solid #000;
+            border-radius: 0.25em;
+            background-color: rgba(233, 160, 229, 0.315);
+            color: #000;
+            text-decoration: none;
+            font-size: 1.25em;
+            font-weight: 600;
+            transition: 0.2s ease;
+        }
+        a:hover{
+            background-color: rgba(1, 154, 196, 0.493);
+            color: #fff;
+        }
+      </style>
+</head>
+<body>
+    <div class="frosted-glass">
+        <h1 class="title" id="usname">xxx,欢迎你</h1>
+        
+    </div>
+    <div>
+        <h1 class="header">css页面布局效果预览</h1>
+        <a href="../css_effect_map_collection-master/css风车/index.html ">风车</a>
+        <a href="../css_effect_map_collection-master/css煽动翅膀的蝴蝶/index.html">动态蝴蝶</a>
+        <a href="../css_effect_map_collection-master/文字雨/index.html">文字雨</a>
+        <a href="../css_effect_map_collection-master/纯css气泡背景/index.html">气泡背景</a>
+        <a href="../css_effect_map_collection-master/清明上河图卷轴/temp.html">清明上河图卷轴</a>
+    </div>
+    <script>
+        //获取本地储存的用户名并且输出在span标签中
+        window.onload = function(){
+            var userInfo =JSON.parse(localStorage.getItem('userInfo'));
+            if(userInfo){
+                document.getElementById('usname').innerHTML = '欢迎你,'+userInfo.username;
+            }
+        }
+    </script>
+</body>
+</html>
